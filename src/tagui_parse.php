@@ -206,7 +206,7 @@ case "code": return code_intent($script_line); break;
 default: echo "ERROR - " . current_line() . " cannot understand step " . $script_line . "\n";}}
 
 function get_intent($raw_intent) {$lc_raw_intent = strtolower($raw_intent); 
-if ((substr($lc_raw_intent,0,7)=="http://") or (substr($lc_raw_intent,0,8)=="https://") or (substr($lc_raw_intent,0,9)=="chrome://") or (substr($lc_raw_intent,0,11)=="whatsapp://")) return "url";
+if ((substr($lc_raw_intent,0,7)=="http://") or (substr($lc_raw_intent,0,8)=="https://") or (substr($lc_raw_intent,0,9)=="chrome://") or (substr($lc_raw_intent,0,11)=="whatsapp://") or (substr($lc_raw_intent,0,7)=="file://")) return "url";
 
 // first set of conditions check for valid keywords with their parameters
 if ((substr($lc_raw_intent,0,4)=="tap ") or (substr($lc_raw_intent,0,6)=="click ")) return "tap"; 
