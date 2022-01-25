@@ -530,7 +530,7 @@ default: return "this.echo('ERROR - cannot understand step " + live_line.replace
 
 // for live mode understanding intent of line entered
 function get_intent(raw_intent) {var lc_raw_intent = raw_intent.toLowerCase();
-if (lc_raw_intent.substr(0,7) == 'http://' || lc_raw_intent.substr(0,8) == 'https://') return 'url';
+if (lc_raw_intent.substr(0,7) == 'http://' || lc_raw_intent.substr(0,8) == 'https://' || lc_raw_intent.substr(0,9) == 'chrome://' || lc_raw_intent.substr(0,11) == 'whatsapp://' || lc_raw_intent.substr(0,7) == 'file://') return 'url';
 
 // first set of conditions check for valid keywords with their parameters
 if ((lc_raw_intent.substr(0,4) == 'tap ') || (lc_raw_intent.substr(0,6) == 'click ')) return 'tap';
